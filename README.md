@@ -1,227 +1,92 @@
-# 🛒 CampusCart - Android E-Commerce Application
+# CampusCart 🛒
 
-CampusCart is a modern Android e-commerce application developed using **Kotlin** and follows the **MVVM (Model-View-ViewModel)** architecture. The application enables users to register, log in, browse products, upload products, and save favorite items while leveraging Firebase and Room Database for cloud and local data management.
+[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.x-blue.svg)](https://kotlinlang.org/)
+[![Compose](https://img.shields.io/badge/Jetpack%20Compose-M3-purple.svg)](https://developer.android.com/jetpack/compose)
+[![Database](https://img.shields.io/badge/Persistence-Room%20DB-orange.svg)](https://developer.android.com/training/data-storage/room)
 
-This project was developed as part of the **TuteDude Android Development Assignment**.
-
----
-
-# Features
-
-## Authentication
-
-* User Registration
-* User Login
-* Firebase Email & Password Authentication
-* Login and Registration Validation
-
-## Home Screen
-
-* Displays all uploaded products
-* Product Image
-* Product Title
-* Short Description
-* Product Price
-* Navigation to Product Details
-
-## Product Details
-
-* Full Product Description
-* Product Images
-* Product Price
-* Uploader Name
-* Contact Information
-* Add Product to Favorites
-
-## Upload Product
-
-Users can upload products with:
-
-* Product Title
-* Description
-* Price
-* Minimum Three Images
-
-Product information is stored in Firebase Firestore, and product images are stored in Firebase Storage.
-
-## Favorites
-
-* Save products locally
-* Offline access using Room Database
-* View and remove favorite products
+**CampusCart** is a modern, visually immersive peer-to-peer marketplace exclusively for university students. Whether you're looking to buy, sell, or rent textbooks, exam prep materials, lab equipment, furniture, or dorm essentials, CampusCart connects you with trusted peers right within your campus community.
 
 ---
 
-# Architecture
+## 🎨 Visual Identity 
 
-The application follows the MVVM architecture with a clean separation between UI, ViewModel, Repository, and Data layers.
+CampusCart delivers a polished, content-rich Material Design 3 experience with edge-to-edge layouts, dynamic promotional carousels, and intuitive visual cues that make browsing effortless.
 
-```
-UI
-│
-├── ViewModel
-│
-├── Repository
-│
-├── Firebase / Room
-│
-└── Models
-```
+- **Custom Promo Slider** – Showcases hot deals, rental events, and safety tips right at the top of your feed.
+- **Aesthetic Category Badges** – Quickly filter by academic and dorm categories like Books, Electronics, Furniture, Notes, Lab Equipment, and Hostel Essentials.
+- **Dual-mode Trade Chips** – Instantly identify listings with colored badges: **Sell** (Green) for one-time purchases or **Rent** (Blue) with clear monthly pricing.
+- **Rich Student Profiles** – Build trust with detailed seller info including college, location, and rating indicators.
 
----
+--- screen video = https://res.cloudinary.com/fpgcjy7h/video/upload/v1783615933/campuscartvideo_edited_zt1bq2.mp4
+apk file = https://drive.google.com/file/d/1unkoYKH9wZA8mQAW1i1d72MeDYgF5eD8/view
 
-# Tech Stack
+## 🚀 Key Features
 
-* Kotlin
-* MVVM Architecture
-* Hilt Dependency Injection
-* Firebase Authentication
-* Firebase Firestore
-* Firebase Storage
-* Room Database
-* Jetpack Compose / XML
-* Navigation Component
-* ViewModel
-* LiveData / StateFlow
+- **Unified Campus Feed** – Browse all listings or filter by category with a single tap on customized category pills.
+- **Dual Trading Support (Buy/Sell vs. Rent)** – Clear pricing formats for both flat purchases and monthly rentals (e.g., scientific calculators, study desks, metal beds).
+- **Robust Favorites/Wishlist** – Bookmark items instantly with offline-ready persistence powered by Room Database.
+- **Streamlined Product Posting** – An intuitive upload dashboard with preset images, automated category-based rental calculations, and built-in error validation.
+- **Detailed Product Pages** – Swipeable image galleries, high-contrast action buttons, condition ratings, and verified college affiliation labels for added trust.
 
 ---
 
-# Project Structure
+## 🛠️ Architecture & Tech Stack
 
-```
-CampusCart
-│
-├── app
-├── data
-│   ├── local
-│   ├── remote
-│   ├── repository
-│
-├── di
-│
-├── model
-│
-├── ui
-│   ├── auth
-│   ├── home
-│   ├── details
-│   ├── upload
-│   ├── favorites
-│
-├── viewmodel
-│
-├── utils
-│
-└── MainActivity.kt
-```
+Built following Google's **Modern Android Development (MAD)** guidelines, CampusCart leverages a clean, scalable architecture.
+
+- **UI Framework:** [Jetpack Compose](https://developer.android.com/jetpack/compose) – Declarative, state-driven UI with Material Design 3.
+- **Architecture:** MVVM with Repository pattern for clean separation of concerns.
+- **Local Persistence:** [Room Database](https://developer.android.com/training/data-storage/room) – Offline-first favorites with robust SQLite mapping.
+- **Asynchronous Flow:** [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) & [StateFlow](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/) – Reactive state management for seamless UI updates.
+- **Image Loading:** [Coil](https://coil-kt.github.io/coil/) – Optimized, cached image loading with smooth crossfade transitions.
+- **System Styling:** Full `enableEdgeToEdge()` support with custom WindowInsets for status and navigation bars.
 
 ---
 
-# Firebase Services
+## 📂 Project Directory Structure
 
-* Firebase Authentication
-* Firebase Firestore
-* Firebase Storage
+```text
+app/src/main/java/com/example/
+├── CampusCartApplication.kt      # App configuration and initialization
+├── MainActivity.kt               # Single-activity setup with edge-to-edge styling
+├── data/
+│   ├── local/
+│   │   └── LocalDb.kt            # Room Database (Entities, DAOs, and Favorites)
+│   ├── model/
+│   │   └── Models.kt             # Product, category, and core domain models
+│   └── repository/
+│       ├── AuthRepository.kt     # Authentication layer interfaces
+│       ├── FavoriteRepository.kt # Favorites data layer
+│       └── ProductRepository.kt  # Product seeding, listing, and upload logic
+├── di/
+│   └── AppContainer.kt           # Manual dependency injection container
+└── ui/
+    ├── components/
+    │   └── Components.kt         # Reusable UI elements (BannerSlider, ProductCard, CategoryPill)
+    ├── navigation/
+    │   └── AppNavigation.kt      # Jetpack Navigation Compose routes
+    ├── screens/
+    │   ├── HomeScreen.kt         # Feed with promo banners and category filters
+    │   ├── ProductDetailsScreen.kt # Multi-image gallery with detailed product view
+    │   ├── UploadProductScreen.kt # Intuitive form with preset visual aids
+    │   ├── FavoritesScreen.kt    # Offline wishlist management
+    │   ├── ProfileScreen.kt      # Student profile and stats
+    │   └── Login/RegisterScreen.kt # Seamless onboarding flows
+    ├── theme/
+    │   └── Theme.kt              # Centralized M3 colors and typography
+    └── viewmodel/
+        ├── AuthViewModel.kt      # User authentication state
+        ├── ProductViewModel.kt   # Product catalog and feed logic
+        └── UploadViewModel.kt    # Validation and submission logic for new listings
 
----
+💻 Getting Started
+Prerequisites
+Android Studio (Ladybug or newer)
 
-# Dependencies
+JDK 17+
 
-* AndroidX
-* Material Design
-* Firebase Authentication
-* Firebase Firestore
-* Firebase Storage
-* Room Database
-* Hilt
-* Navigation Component
-* Coil / Glide
+Android SDK level 34+
 
-Optional Libraries:
-
-* Retrofit
-* Gson Converter
-* FakeStore API
-
----
-
-# Getting Started
-
-## Prerequisites
-
-* Android Studio Hedgehog or later
-* JDK 17 or above
-* Android SDK 34+
-* Firebase Project
-
-## Installation
-
-
-Open the project in Android Studio.
-
-Download the `google-services.json` file from Firebase Console and place it inside the `app` directory.
-
-Enable the following Firebase services:
-
-* Authentication (Email/Password)
-* Cloud Firestore
-* Firebase Storage
-
-Sync Gradle and run the application on an Android device or emulator.
-
----
-
-
-screen video = https://res.cloudinary.com/fpgcjy7h/video/upload/v1783615933/campuscartvideo_edited_zt1bq2.mp4
-base apk = https://drive.google.com/file/d/1unkoYKH9wZA8mQAW1i1d72MeDYgF5eD8/view?usp=sharing
----
-
-# Assignment Requirements Completed
-
-* Firebase Authentication
-* Product Listing
-* Product Details
-* Product Upload
-* Firebase Firestore Integration
-* Firebase Storage Integration
-* Room Database for Favorites
-* MVVM Architecture
-* Hilt Dependency Injection
-* Material Design UI
-* Navigation Component
-
----
-
-# Optional Features
-
-* Search Products
-* Category Filters
-* Recommended Products using FakeStore API
-* Retrofit Integration
-* Push Notifications
-* Pagination / Lazy Loading
-
----
-
-# Project Deliverables
-
-* Android Source Code
-* APK File
-* Screen Recording
-* GitHub Repository
-* Project Documentation
-
----
-
-# Author
-
-**Soumyadeep Das**
-
-B.Tech in Computer Science & Information Technology
-
----
-
-# License
-
-This project is developed for educational purposes as part of the **TuteDude Android Development Assignment**.
-
+Installation & Run
+Clone the Repository:
