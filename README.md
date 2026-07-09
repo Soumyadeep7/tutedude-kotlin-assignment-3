@@ -176,32 +176,8 @@ Sync Gradle and run the application on an Android device or emulator.
 
 ---
 
-# Screenshots
 
-## Login Screen
-
-(Add Screenshot)
-
-## Registration Screen
-
-(Add Screenshot)
-
-## Home Screen
-
-(Add Screenshot)
-
-## Product Details Screen
-
-(Add Screenshot)
-
-## Upload Product Screen
-
-(Add Screenshot)
-
-## Favorites Screen
-
-(Add Screenshot)
-
+screen video = https://res.cloudinary.com/fpgcjy7h/video/upload/v1783615933/campuscartvideo_edited_zt1bq2.mp4
 ---
 
 # Assignment Requirements Completed
