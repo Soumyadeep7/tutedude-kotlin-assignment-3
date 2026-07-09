@@ -156,11 +156,6 @@ Optional Libraries:
 
 ## Installation
 
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/CampusCart.git
-```
 
 Open the project in Android Studio.
 
