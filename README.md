@@ -89,4 +89,27 @@ JDK 17+
 Android SDK level 34+
 
 Installation & Run
-Clone the Repository:
+Clone the Repository:git clone https://github.com/Soumyadeep7/tutedude-kotlin-assignment-3.git
+cd tutedude-kotlin-assignment-3
+
+Open in Android Studio:
+
+Launch Android Studio and select Open.
+
+Navigate to the cloned project directory and click OK.
+
+Allow Gradle to sync automatically.
+
+Run the App:
+
+Connect a physical device via ADB or launch an emulator (API 31+ recommended).
+
+Click Run (Shift + F10) to build and deploy.
+
+🔒 Security & Local Testing
+Run unit tests with:
+
+bash
+./gradlew :app:testDebugUnitTest
+📄 License
+This project is licensed under the MIT License 2.0. Feel free to fork, enhance, and deploy!                                                               
