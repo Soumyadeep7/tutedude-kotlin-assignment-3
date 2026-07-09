@@ -173,6 +173,7 @@ Sync Gradle and run the application on an Android device or emulator.
 
 
 screen video = https://res.cloudinary.com/fpgcjy7h/video/upload/v1783615933/campuscartvideo_edited_zt1bq2.mp4
+base apk = https://drive.google.com/file/d/1unkoYKH9wZA8mQAW1i1d72MeDYgF5eD8/view?usp=sharing
 ---
 
 # Assignment Requirements Completed
